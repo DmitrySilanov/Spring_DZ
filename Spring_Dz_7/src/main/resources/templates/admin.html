@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Security from spring</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:replace="~{page-templates :: navbar}"></div>
+<div class="main">
+    <div th:replace="~{page-templates :: main-text}"></div>
+    <div class="text">
+        <h2>Private information</h2>
+        <div>
+            <p>User: <span sec:authentication="name">NOT FOUND</span></p>
+            <p>Spring Roles: <span sec:authentication="principal.authorities">NOT FOUND</span></p>
+        </div>
+    </div>
+    <div th:fragment="footer">
+        <img class="Image" src="https://sun9-53.userapi.com/impf/c851236/v851236088/1d5cd9/PxjeFl9lPCU.jpg?size=1200x675&quality=96&sign=c6aed5545c9c1cb6e859d3caeaa5e814&c_uniq_tag=1hDwi_NiA8SZbyakRPp8HtyWWs86oW1_pciFwqF4g7U&type=album"
+        >
+    </div>
+</div>
+</body>
+</html>
