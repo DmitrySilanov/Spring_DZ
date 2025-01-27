@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Students</h1>
+    <h2>View students</h2>
+
+<table style="width:100%">
+    <tr>
+        <th bgcolor="#00FF00">FIRST NAME</th>
+        <th bgcolor="#00FF00">LAST NAME</th>
+        <th bgcolor="#00FF00">AGE</th>
+    </tr>
+    <tr th:each="student : ${students}">
+        <td th:text="${student.firstName}"></td>
+        <td th:text="${student.lastName}"></td>
+        <td th:text="${student.age}"></td>
+    </tr>
+</table>
+
+<h2>Add a student</h2>
+<form action="/students" method="post">
+    First name: <input type="text" name="firstName"><br />
+    Last name: <input type="text" name="lastName"><br />
+    Age: <input type="number" step="any" name="age"><br />
+    <button type="submit">Add student</button>
+</form>
+</body>
+</html>
